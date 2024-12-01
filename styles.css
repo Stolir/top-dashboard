@@ -1,5 +1,25 @@
 /* Josh Comeau's CSS reset*/
 /* 1. Use a more-intuitive box-sizing model */
+@media (prefers-color-scheme: light) {
+    :root {
+      --text: #141c24;
+      --background: #e0d6d6;
+      --primary: #60333e;
+      --secondary: #762a2a;
+      --accent: #570f0f;
+    }
+  }
+@media (prefers-color-scheme: dark) {
+    :root {
+      --text: #dbe3eb;
+      --background: #291f1f;
+      --primary: #cc9eaa;
+      --secondary: #d68a8a;
+      --accent: #f0a8a8;
+    }
+  }
+  
+
 *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -47,3 +67,69 @@
     isolation: isolate;
   }
 
+
+body {
+    color: var(--text);
+    background-color: var(--background);
+}
+
+.grid-container {
+    display: grid;
+    grid-template: 1fr 5fr / 1fr 3fr;
+    grid-template-areas: "sidebar header"
+                         "sidebar main";
+}
+
+.header {
+    background-color: var(--secondary);
+    grid-area: header;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.sidebar {
+    background-color: var(--accent);
+    grid-area: sidebar;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.sub-controls, 
+.searchbar, 
+.account-controls {
+    display: flex;
+}
+
+.sub-controls {
+    align-items: center;
+    padding: 15px;
+
+
+}
+
+.searchbar {
+    /* margin-right: auto; */
+    margin-left: 25px;
+    gap: 8px;
+}
+
+.account-controls{
+    gap: 30px;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.sub-controls img {
+    width: 25px;
+    flex: 0 0 auto;
+}
+.searchbar input {
+    border: none;
+    border-radius: 15px;
+    width: 300px;
+    flex: 1 1 auto;
+}
