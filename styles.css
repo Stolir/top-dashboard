@@ -221,6 +221,7 @@ input:focus {
     "posts announcements"
     "posts trending";
   padding: 25px;
+  gap: 15px;
 
 }
 
@@ -228,6 +229,7 @@ input:focus {
   grid-area: posts;
   display: grid;
   grid-template-rows: auto 1fr;
+  gap: 10px;
 }
 
 .cards {
@@ -247,6 +249,11 @@ input:focus {
   background-color: rgba(255, 255, 255, 1);
 }
 
+.card-title:hover,
+.card-controls img:hover {
+  cursor: pointer;
+}
+
 .card-title {
   font-size: 20px;
   font-weight: 700;
@@ -254,6 +261,18 @@ input:focus {
 
 .card-content {
   color: rgb(94, 93, 93);
+}
+
+.card-controls {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.card img {
+  width: 25px;
 }
 
 .announecments {
