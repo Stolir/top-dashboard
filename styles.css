@@ -259,7 +259,7 @@ input:focus {
   font-weight: 700;
 }
 
-.card-content {
+.card-content, .sidecard div{
   color: rgb(94, 93, 93);
 }
 
@@ -275,6 +275,14 @@ input:focus {
   width: 25px;
 }
 
+.announecments, 
+.trending {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 0 40px;
+  margin-bottom: 25px;
+}
+
 .announecments {
   grid-area: announcements;
 }
@@ -283,3 +291,34 @@ input:focus {
   grid-area: trending;
 }
 
+.sidecards {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1 1 100%;
+}
+
+.sidecards p {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sidecard p:hover {
+  cursor: pointer;
+}
+
+.sidecard {
+  font-size: 12px;
+}
+
+.sidecard {
+  border-bottom: 1px rgb(0, 0, 0, 0.3) solid;
+  padding: 10px;
+}
+
+.lastcard {
+  border-bottom: none;
+}
