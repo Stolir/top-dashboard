@@ -281,6 +281,7 @@ input:focus {
   grid-template-rows: auto 1fr;
   padding: 0 40px;
   margin-bottom: 25px;
+  height: fit-content;
 }
 
 .announecments {
@@ -291,6 +292,13 @@ input:focus {
   grid-area: trending;
 }
 
+.sidecards, .grid-sidecards {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 15px;
+  height: fit-content;
+}
+
 .sidecards {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -298,27 +306,48 @@ input:focus {
   gap: 10px;
   padding: 20px;
   border-radius: 15px;
-  flex: 1 1 100%;
+  flex: 0 1 auto;
 }
 
-.sidecards p {
+.sidecards p,
+.grid-sidecards p {
   font-size: 14px;
   font-weight: 700;
 }
 
-.sidecard p:hover {
+.sidecard p:hover,
+.grid-sidecards p:hover {
   cursor: pointer;
 }
 
-.sidecard {
-  font-size: 12px;
-}
 
-.sidecard {
+.sidecard,
+.grid-sidecard {
   border-bottom: 1px rgb(0, 0, 0, 0.3) solid;
-  padding: 10px;
+  padding: 0px 10px 10px;
+  font-size: 12px;
 }
 
 .lastcard {
   border-bottom: none;
+}
+
+.grid-sidecards {
+  display: grid;
+  grid-template: repeat(4, min-content) / 1fr 3fr;
+  row-gap: 15px;
+}
+
+.grid-sidecards img {
+  width: 40px;
+}
+
+.grid-sidecard {
+  padding: 0px 5px 10px;
+}
+
+button:hover, 
+img:hover,
+.sidebar div div:hover {
+  cursor: pointer;
 }
